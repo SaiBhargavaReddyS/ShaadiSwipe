@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		AD3CE6352D8BDE7F0098D0D2 /* ShaadiSwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ShaadiSwipe.app; path = "/Users/vamshikrishnareddy/Downloads/Bhargava/Shaadi/ShaadiSwipe/ShaadiSwipe/build/Debug-iphoneos/ShaadiSwipe.app"; sourceTree = "<absolute>"; };
+		AD3CE6822D8BFB940098D0D2 /* ShaadiSwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShaadiSwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		AD3CE6472D8BDE810098D0D2 /* Exceptions for "ShaadiSwipe" folder in "ShaadiSwipe" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"/Localized: VIewControllers/Main.storyboard",
 				Info.plist,
+				Utilities/Assets.xcassets,
 			);
 			target = AD3CE6342D8BDE7F0098D0D2 /* ShaadiSwipe */;
 		};
@@ -46,6 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				AD3CE6372D8BDE7F0098D0D2 /* ShaadiSwipe */,
+				AD3CE6822D8BFB940098D0D2 /* ShaadiSwipe.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,7 +74,7 @@
 			packageProductDependencies = (
 			);
 			productName = ShaadiSwipe;
-			productReference = AD3CE6352D8BDE7F0098D0D2 /* ShaadiSwipe.app */;
+			productReference = AD3CE6822D8BFB940098D0D2 /* ShaadiSwipe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
