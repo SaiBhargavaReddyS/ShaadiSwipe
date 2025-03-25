@@ -10,6 +10,7 @@ import UIKit
 struct Person {
     var name: String
     var Image: UIImage
+    var location: String
 }
 
 protocol viewControllertoViewModelDelegate: AnyObject {

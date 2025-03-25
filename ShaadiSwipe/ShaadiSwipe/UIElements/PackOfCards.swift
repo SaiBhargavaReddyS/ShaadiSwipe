@@ -16,8 +16,11 @@ struct PackOfCards: View {
     
     var body: some View {
         ZStack {
+            Text("End of cards")
             ForEach(cards.indices, id: \.self) { id in
-                SwipableCardView(image: cards[id].Image, name: "\(cards[id].name)", onRemove: {
+                SwipableCardView(image: cards[id].Image, name: "\(cards[id].name)",
+                                 location: cards[id].location,
+                                 onRemove: {
                     direction in removeCard(at: id, direction: direction)
                 })
             }

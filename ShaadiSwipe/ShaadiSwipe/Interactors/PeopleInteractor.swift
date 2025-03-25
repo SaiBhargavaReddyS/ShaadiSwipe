@@ -40,15 +40,16 @@ public struct PeopleInteractor {
         do {
             let people = try await fetchPeople(of: count).results
             
-            try await withThrowingTaskGroup(of: (UIImage, String).self) { group in
+            try await withThrowingTaskGroup(of: (UIImage, String, String).self) { group in
                 for imageData in people {
                         group.addTask {
-                            return (try await fetchImageFrom(url: imageData.picture.large), imageData.name.first)
+                            return (try await fetchImageFrom(url: imageData.picture.large),
+                                    "\(imageData.name.first) \(imageData.name.last)", imageData.location.city)
                         }
                     }
                     
                     for try await imagePerson in group {
-                        personArray.append(Person(name: imagePerson.1, Image: imagePerson.0))
+                        personArray.append(Person(name: imagePerson.1, Image: imagePerson.0, location: imagePerson.2))
                     }
                 }
         } catch {

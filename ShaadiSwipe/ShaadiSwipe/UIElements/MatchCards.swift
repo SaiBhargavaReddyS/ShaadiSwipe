@@ -12,6 +12,7 @@ struct SwipableCardView: View {
     
     var image: UIImage
     var name: String
+    var location: String
     var onRemove: (String) -> Void
     
     @State private var offset = CGSize.zero
@@ -26,11 +27,14 @@ struct SwipableCardView: View {
                 ZStack {
                     VStack(alignment: .center, spacing: 20) {
                     Image(uiImage: image)
-                            .clipShape(Circle())
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                             .font(.system(size: 160))
                     Text(name)
                         .font(.largeTitle)
                         .foregroundStyle(.white)
+                    Text(location)
+                            .font(.headline.weight(.bold))
+                            .foregroundStyle(.white)
                 }
                     .padding()
                     
@@ -106,5 +110,5 @@ func createDummyImage(size: CGSize, color: UIColor) -> UIImage? {
                         createDummyImage(
                             size: CGSize(width: 200, height: 200),
                             color: UIColor.red) ?? UIImage(),
-                     name: "Bhargava", onRemove: { x in print(x)})
+                     name: "Bhargava", location: "siddipet", onRemove: { x in print(x)})
 }
