@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  AcceptedViewController.swift
 //  ShaadiSwipe
 //
-//  Created by Vamshi Reddy on 20/03/25.
+//  Created by Vamshi Reddy on 22/03/25.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class AcceptedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemPink
         // Do any additional setup after loading the view.
     }
-
-
 }
-
