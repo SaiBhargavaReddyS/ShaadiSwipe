@@ -2,7 +2,7 @@
 //  PackOfCards.swift
 //  ShaadiSwipe
 //
-//  Created by Vamshi Reddy on 22/03/25.
+//  Created by Sai Bhargava Reddy on 22/03/25.
 //
 
 import SwiftUI
@@ -10,11 +10,9 @@ import UIKit
 
 struct PackOfCards: View {
     
+    @ObservedObject var personSelection: PersonSelections
+    
     @State var cards: [Person] = []
-    
-    @State var rejectedCards: [Person] = []
-    
-    @State var acceptedCards: [Person] = []
     
     var body: some View {
         ZStack {
@@ -31,21 +29,13 @@ struct PackOfCards: View {
         
         switch direction {
         case "right":
-            acceptedCards.append(cards[index])
+            personSelection.acceptedPeople.append(cards[index])
         case "left":
-            rejectedCards.append(cards[index])
+            personSelection.rejectedPeople.append(cards[index])
         default:
             break
         }
         cards.remove(at: index)
         
-//        print(acceptedCards, rejectedCards, cards)
-        
     }
-}
-
-
-
-#Preview {
-    PackOfCards()
 }
